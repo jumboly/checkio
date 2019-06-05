@@ -5,11 +5,10 @@ def all_the_same(elements: List[Any]) -> bool:
     if len(elements) <= 1:
         return True
 
-    pele = elements[0]
+    first = elements[0]
     for ele in elements[1:]:
-        if pele != ele:
+        if first != ele:
             return False
-        pele = ele
 
     return True
 
