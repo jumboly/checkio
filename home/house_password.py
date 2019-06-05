@@ -1,8 +1,10 @@
 import re
 
+PATTERNS = [re.compile(p) for p in [".{10}", "[a-z]", "[A-Z]", "\\d"]]
+
 def checkio(data: str) -> bool:
-    for pattern in [r".{10}", r"[a-z]", r"[A-Z]", r"[0-9]"]:
-        if not re.search(pattern, data):
+    for pattern in PATTERNS:
+        if not pattern.search(data):
             return False
     return True
 
