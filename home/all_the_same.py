@@ -2,11 +2,15 @@ from typing import List, Any
 
 
 def all_the_same(elements: List[Any]) -> bool:
-    prev_element = None
-    for element in elements:
-        if prev_element != None and prev_element != element:
+    if len(elements) <= 1:
+        return True
+
+    pele = elements[0]
+    for ele in elements[1:]:
+        if pele != ele:
             return False
-        prev_element = element
+        pele = ele
+
     return True
 
 
